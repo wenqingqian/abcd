@@ -1,0 +1,3 @@
+/home/wenqingqian/Tsuki/module/log/build/CMakeFiles/asynclog.dir
+/home/wenqingqian/Tsuki/module/log/build/CMakeFiles/edit_cache.dir
+/home/wenqingqian/Tsuki/module/log/build/CMakeFiles/rebuild_cache.dir
