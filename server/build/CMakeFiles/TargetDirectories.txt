@@ -1,0 +1,7 @@
+/home/wenqingqian/gitrepo/abcd/server/build/CMakeFiles/tinymuduo.dir
+/home/wenqingqian/gitrepo/abcd/server/build/CMakeFiles/edit_cache.dir
+/home/wenqingqian/gitrepo/abcd/server/build/CMakeFiles/rebuild_cache.dir
+/home/wenqingqian/gitrepo/abcd/server/build/log/CMakeFiles/asynclogtest.dir
+/home/wenqingqian/gitrepo/abcd/server/build/log/CMakeFiles/ASYNCLOG.dir
+/home/wenqingqian/gitrepo/abcd/server/build/log/CMakeFiles/edit_cache.dir
+/home/wenqingqian/gitrepo/abcd/server/build/log/CMakeFiles/rebuild_cache.dir

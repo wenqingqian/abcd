@@ -23,9 +23,13 @@ public:
 
 	void start(){
 		thread_ = std::thread(&AsyncLogger::asyncLogFunc,this);
+		#ifdef DEBUG
 		std::cout<<"pre start"<<std::endl;
+		#endif
 		latch_.wait();
+		#ifdef DEBUG
 		std::cout<<"start ok"<<std::endl;
+		#endif
 	}
 	~AsyncLogger(){
 		running_ = false;

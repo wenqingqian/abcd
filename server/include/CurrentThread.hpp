@@ -6,6 +6,7 @@
 #include <pthread.h>
 namespace tsuki::util::currentThread{
 
+//注意thread_local开销
 extern thread_local pthread_t t_id_cache_;
 extern thread_local std::string t_name_cache_;
 extern thread_local std::string t_id_string_cache_;

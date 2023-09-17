@@ -2,7 +2,7 @@
 #include "TomlConfig.hpp"
 #include <pthread.h>
 #include "AsyncLogger.hpp"
-
+#include "CommonUtil.hpp"
 #include <iostream>
 namespace tsuki::util{
 
@@ -33,7 +33,7 @@ LogLevel Logger::logignore_ = [](){
 }();
 
 Logger::Logger(LogLevel level, std::source_location sl)
-	:	stream_(level),
+	:	stream_(static_cast<int>(level)),
 		level_(level),
 	 	sl_(sl),
 	 	levelstr_(getvalue(level))
@@ -54,6 +54,10 @@ Logger::Logger(LogLevel level, std::source_location sl)
 	stream_.append(" ",1);
 }
 
+std::string Logger::getvalue(LogLevel level){
+	auto s = reflect::enumName(level);
+	return s.substr(s.find_last_of(':')+1);
+}
 
 Logger::~Logger(){
 	// std::cout<<"~logger"<<std::endl;
@@ -63,8 +67,9 @@ Logger::~Logger(){
 	AsyncLogger_->append(stream_); 
 }
 
-std::string Logger::getvalue(LogLevel level){
-	switch (level){
+
+/*
+switch (level){
 		case DEBUG: return "DEBUG";break;
 		case INFO : return "INFO ";break;
 		case WARN : return "WARN ";break;
@@ -72,7 +77,9 @@ std::string Logger::getvalue(LogLevel level){
 		case FATAL: return "FATAL";break;
 	}
 	return "NULL";
-}
+*/
+
+
 
 
 

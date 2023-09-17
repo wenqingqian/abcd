@@ -3,7 +3,7 @@
 
 #include "noncopyable.hpp"
 #include "LogStream.hpp"
-#include "currentThread.hpp"
+#include "CurrentThread.hpp"
 #include "time.hpp"
 
 #include <chrono>
@@ -16,13 +16,19 @@
 
 namespace tsuki::util{
 
-using LogLevel = int;
 namespace fs = std::filesystem;
+
+enum LogLevel{
+	DEFAULT,
+	DEBUG,
+	INFO,
+	WARN,
+	ERROR,
+	FATAL
+};
 
 class Logger : public noncopyable{
 public:
-	
-
 	Logger(LogLevel, std::source_location = std::source_location::current());
 
 	static LogLevel& loglevel() { return logignore_; }
@@ -33,14 +39,7 @@ public:
 	std::string getvalue(LogLevel);
 	~Logger();
 
-	enum log_level{
-		DEFAULT,
-		DEBUG,
-		INFO,
-		WARN,
-		ERROR,
-		FATAL
-	};
+
 private:
 
 	//当前日志级别
@@ -83,18 +82,18 @@ private:
 // };
 }//namespace tsuki::util
 
-#define LOG if ( tsuki::util::Logger::loglevel() <= tsuki::util::Logger::INFO )\
-	tsuki::util::Logger(tsuki::util::Logger::INFO).stream()
-#define LOG_DEBUG if ( tsuki::util::Logger::loglevel() <= tsuki::util::Logger::DEBUG )\
-	tsuki::util::Logger(tsuki::util::Logger::DEBUG).stream()
-#define LOG_INFO if ( tsuki::util::Logger::loglevel() <= tsuki::util::Logger::INFO )\
-	tsuki::util::Logger(tsuki::util::Logger::INFO).stream()
-#define LOG_WARN if ( tsuki::util::Logger::loglevel() <= tsuki::util::Logger::WARN )\
-	tsuki::util::Logger(tsuki::util::Logger::WARN).stream()
-#define LOG_ERROR if ( tsuki::util::Logger::loglevel() <= tsuki::util::Logger::ERROR )\
-	tsuki::util::Logger(tsuki::util::Logger::ERROR).stream()
-#define LOG_FATAL if ( tsuki::util::Logger::loglevel() <= tsuki::util::Logger::FATAL )\
-	tsuki::util::Logger(tsuki::util::Logger::FATAL).stream()
+#define LOG if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::INFO )\
+	tsuki::util::Logger(tsuki::util::LogLevel::INFO).stream()
+#define LOG_DEBUG if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::DEBUG )\
+	tsuki::util::Logger(tsuki::util::LogLevel::DEBUG).stream()
+#define LOG_INFO if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::INFO )\
+	tsuki::util::Logger(tsuki::util::LogLevel::INFO).stream()
+#define LOG_WARN if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::WARN )\
+	tsuki::util::Logger(tsuki::util::LogLevel::WARN).stream()
+#define LOG_ERROR if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::ERROR )\
+	tsuki::util::Logger(tsuki::util::LogLevel::ERROR).stream()
+#define LOG_FATAL if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::FATAL )\
+	tsuki::util::Logger(tsuki::util::LogLevel::FATAL).stream()
 
 
 #endif

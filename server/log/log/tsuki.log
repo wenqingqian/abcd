@@ -1,2 +1,29 @@
-2023-09-04~21:32:29
-2023-09-04~21:32:28 552:612 INFO  (null) default end main.cpp:112
+2023-09-16~23:09:30
+2023-09-16~23:09:27 126:272 :DEBUG (null) default 0 main.cpp:28
+2023-09-16~23:09:27 132:603 :ERROR (null) default 1234567890123 main.cpp:29
+2023-09-16~23:09:27 132:662 :FATAL (null) default 1 main.cpp:30
+2023-09-16~23:09:27 132:708 :INFO (null) default 3.1415926 main.cpp:31
+2023-09-16~23:09:27 132:745 :INFO (null) default 1 main.cpp:32
+2023-09-16~23:09:27 132:779 :INFO (null) default 1 main.cpp:33
+2023-09-16~23:09:27 132:811 :INFO (null) default 1 main.cpp:34
+2023-09-16~23:09:27 132:846 :INFO (null) default 1 main.cpp:35
+2023-09-16~23:09:27 132:879 :INFO (null) default 1.6555556 main.cpp:36
+2023-09-16~23:09:27 132:914 :INFO (null) default 1 main.cpp:37
+2023-09-16~23:09:27 132:950 :INFO (null) default c main.cpp:38
+2023-09-16~23:09:27 132:987 :INFO (null) default abcdefg main.cpp:39
+2023-09-16~23:09:27 133:035 :INFO (null) default This is a string main.cpp:40
+2023-09-16~23:09:30 133:190 :INFO (null) default fddsac03.666This is a string main.cpp:78
+2023-09-16~23:09:48 296:404 DEBUG (null) default 0 main.cpp:28
+2023-09-16~23:09:48 303:832 ERROR (null) default 1234567890123 main.cpp:29
+2023-09-16~23:09:48 303:897 FATAL (null) default 1 main.cpp:30
+2023-09-16~23:09:48 303:945 INFO (null) default 3.1415926 main.cpp:31
+2023-09-16~23:09:48 303:984 INFO (null) default 1 main.cpp:32
+2023-09-16~23:09:48 304:034 INFO (null) default 1 main.cpp:33
+2023-09-16~23:09:48 304:070 INFO (null) default 1 main.cpp:34
+2023-09-16~23:09:48 304:103 INFO (null) default 1 main.cpp:35
+2023-09-16~23:09:48 304:140 INFO (null) default 1.6555556 main.cpp:36
+2023-09-16~23:09:48 304:177 INFO (null) default 1 main.cpp:37
+2023-09-16~23:09:48 304:211 INFO (null) default c main.cpp:38
+2023-09-16~23:09:48 304:247 INFO (null) default abcdefg main.cpp:39
+2023-09-16~23:09:48 304:282 INFO (null) default This is a string main.cpp:40
+2023-09-16~23:09:51 304:445 INFO (null) default fddsac03.666This is a string main.cpp:78

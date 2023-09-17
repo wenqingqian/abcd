@@ -1,5 +1,5 @@
 #include "Logger.hpp"
-#include "currentThread.hpp"
+#include "CurrentThread.hpp"
 #include <iostream>
 #include <thread>
 #include <vector>

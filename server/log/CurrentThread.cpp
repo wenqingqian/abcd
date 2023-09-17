@@ -1,4 +1,4 @@
-#include "currentThread.hpp"
+#include "CurrentThread.hpp"
 
 #include <unistd.h>
 #include <sys/syscall.h>

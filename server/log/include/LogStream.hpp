@@ -39,10 +39,11 @@ private:
 	char  buffer_[size];
 };
 
-using LogLevel = int;
 
 class LogStream : public noncopyable{
 public:
+	using LogLevel = int;
+	
 	LogStream(LogLevel l):level_(l){}
 
 	int length() { return buffer_.length(); }

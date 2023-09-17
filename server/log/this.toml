@@ -9,4 +9,5 @@ AsyncLogger.buffer_to_write_max = 16
 
 LogFile.output_path = "log/tsuki.log"
 
+# 历史log归档信息(自动)
 logHistoryRecordPath = "include/logHistoryRecord.txt"

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/asynclogtest.dir/AsyncLogger.cpp.o CMakeFiles/asynclogtest.dir/CurrentThread.cpp.o CMakeFiles/asynclogtest.dir/LogFile.cpp.o CMakeFiles/asynclogtest.dir/LogStream.cpp.o CMakeFiles/asynclogtest.dir/Logger.cpp.o CMakeFiles/asynclogtest.dir/main.cpp.o -o /home/wenqingqian/gitrepo/abcd/server/log/asynclogtest 

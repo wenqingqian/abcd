@@ -30,7 +30,7 @@ void AsyncLogger::append(LogStream &ls){
 		// std::cout<<ls.data();
 		// /*printf("%s%d\n",__FILE__,__LINE__);*/
 		current_bufferptr_->append(ls.data(), ls.length());
-		if(ls.level_ >= Logger::log_level::FATAL){
+		if(ls.level_ >= LogLevel::FATAL){
 			cond_.notify_all();
 		}
 	}else{
