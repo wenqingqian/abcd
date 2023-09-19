@@ -40,7 +40,7 @@ void LogFile::append(const char* data, int length){
 	if(--time_check_interval_ <=0){
 		time_check_interval_ = (60/3)*60*4;
 		auto timenow = std::chrono::system_clock::now();
-		auto interval = time_.diff<time::hour>(timenow);
+		auto interval = time_.diff<Time::hour>(timenow);
 		if(interval >= 24){
 			rollLog();
 		}
@@ -56,7 +56,7 @@ void LogFile::append(const char* data, int length){
 	//FIXME 
 	if( time_init_ ){
 		time_init_ = false;
-		time_.reset(time::year,time::second);
+		time_.reset(Time::year,Time::second);
 		output_.write(time_.getTime(),time_.length());
 		output_.write("\n",1);
 	}
@@ -81,7 +81,7 @@ void LogFile::rollLog(){
 	output_.flush();
 	total_size_ += output_.getFileSize();
 
-	time tmp(time::day,time::second);
+	Time tmp(Time::day,Time::second);
 
 	//*输出log归档文件名格式
 	//!

@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/asynclog.dir/main.cpp.o CMakeFiles/asynclog.dir/currentThread.cpp.o CMakeFiles/asynclog.dir/AsyncLogger.cpp.o CMakeFiles/asynclog.dir/LogFile.cpp.o CMakeFiles/asynclog.dir/Logger.cpp.o CMakeFiles/asynclog.dir/LogStream.cpp.o -o /home/wenqingqian/Tsuki/module/log/asynclog 

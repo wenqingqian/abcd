@@ -38,7 +38,7 @@ Logger::Logger(LogLevel level, std::source_location sl)
 	 	sl_(sl),
 	 	levelstr_(getvalue(level))
 	{
-	time t(time::year,time::microsecond);
+	Time t(Time::year,Time::microsecond);
 
 	//time
 	stream_.append(t.getTime(), t.length());
@@ -55,8 +55,13 @@ Logger::Logger(LogLevel level, std::source_location sl)
 }
 
 std::string Logger::getvalue(LogLevel level){
-	auto s = reflect::enumName(level);
-	return s.substr(s.find_last_of(':')+1);
+	auto res = reflect::enumToName(level);
+	auto app = 5-res.size();
+	if(app>0){
+		res+=' ';
+		app--;
+	}
+	return res;
 }
 
 Logger::~Logger(){

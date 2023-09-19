@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/tinymuduo.dir/main.cpp.o -o /home/wenqingqian/gitrepo/abcd/server/tinymuduo  log/libASYNCLOG.a 

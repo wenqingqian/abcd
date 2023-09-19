@@ -8,7 +8,11 @@
 *	set config file path TomlConfigInitFile*/
 //! if the file path was unright , it lead to core dump and no log
 	#ifndef TomlConfigInitFile
-	#define	TomlConfigInitFile "this.toml"
+	#if defined(LOGTEST)
+		#define	TomlConfigInitFile "this.toml"
+	#else
+		#define TomlConfigInitFile "server.toml"
+	#endif
 	#endif
 
 /** @log: 
@@ -17,6 +21,7 @@
 		#include <iostream>
 	namespace tsuki::util{
 		#define TomlConfigLog std::cout //<-
+		//* it need to overload operator <<
 	}
 	#endif
 /**	 	

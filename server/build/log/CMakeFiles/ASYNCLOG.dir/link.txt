@@ -1,2 +1,0 @@
-/usr/bin/ar qc libASYNCLOG.a CMakeFiles/ASYNCLOG.dir/AsyncLogger.cpp.o CMakeFiles/ASYNCLOG.dir/CurrentThread.cpp.o CMakeFiles/ASYNCLOG.dir/LogFile.cpp.o CMakeFiles/ASYNCLOG.dir/LogStream.cpp.o CMakeFiles/ASYNCLOG.dir/Logger.cpp.o CMakeFiles/ASYNCLOG.dir/main.cpp.o
-/usr/bin/ranlib libASYNCLOG.a

@@ -6,10 +6,10 @@
 namespace tsuki::util{
 namespace fs = std::filesystem;
 
-class file : public noncopyable{
+class File : public noncopyable{
 public:
-	file(){}
-	file(const std::string& str, std::ios_base::openmode mode = std::ios::out)
+	File(){}
+	File(const std::string& str, std::ios_base::openmode mode = std::ios::out)
 		:	basename_(str),
 			extensionname_(basename_.extension()),
 			stemname_(basename_.stem()),
@@ -18,7 +18,7 @@ public:
 		ofs_.open(str,mode);
 		filesize_ = ofs_.tellp();
 	}
-	~file(){ ofs_.flush();ofs_.close(); }
+	~File(){ ofs_.flush();ofs_.close(); }
 	void reset(const std::string& str, std::ios_base::openmode mode = std::ios::out){
 		if(ofs_.is_open()){
 			ofs_.flush();ofs_.close();

@@ -6,7 +6,7 @@
 #include <list>
 #include "TomlConfig.hpp"
 #include "noncopyable.hpp"
-#include "time.hpp"
+#include "Time.hpp"
 #include "FileUtil.hpp"
 namespace tsuki::util{
 
@@ -32,8 +32,8 @@ private:
 private:
 	//初始化时间, 在每个文件拿到第一个包的时候
 	bool time_init_ = true;
-	time time_;
-	file output_;
+	Time time_;
+	File output_;
 	//单个文件回滚大小
 	int64_t roll_size_ = 20*1024*1024;//默认20MB
 

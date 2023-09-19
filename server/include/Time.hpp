@@ -10,7 +10,7 @@ namespace tsuki::util
 {
 
 
-class time {
+class Time {
 public:
 	enum mode{
 		year,
@@ -23,8 +23,8 @@ public:
 		microsecond
 	};
 public:
-	time(){ cur_ = timebuf_; }
-	time(mode from, mode end)
+	Time(){ cur_ = timebuf_; }
+	Time(mode from, mode end)
 		:	cur_(timebuf_),
 			time_point_(std::chrono::system_clock::now()),
 			tm_()
@@ -117,9 +117,9 @@ public:
 	const char* getTime(){ return timebuf_; }
 
 private:
-	template <time::mode m_> struct checktime      		
+	template <Time::mode m_> struct checktime      		
 	{using type = std::chrono::seconds;};
-	template <time::mode m_>
+	template <Time::mode m_>
 	using checktime_t = typename checktime<m_>::type;
 public:
 
@@ -196,20 +196,20 @@ private:
 	char timebuf_[64];
 };
 
-	template <> struct time::checktime<time::hour>		
+	template <> struct Time::checktime<Time::hour>		
 	{using type = std::chrono::hours;};
-	template <> struct time::checktime<time::minute>		
+	template <> struct Time::checktime<Time::minute>		
 	{using type = std::chrono::minutes;};
-	template <> struct time::checktime<time::second>		
+	template <> struct Time::checktime<Time::second>		
 	{using type = std::chrono::seconds;};
-	template <> struct time::checktime<time::millisecond>
+	template <> struct Time::checktime<Time::millisecond>
 	{using type = std::chrono::milliseconds;};
-	template <> struct time::checktime<time::microsecond>
+	template <> struct Time::checktime<Time::microsecond>
 	{using type = std::chrono::microseconds;};
 
 
-template <time::mode T, typename U> 
-inline int time::diff(std::chrono::system_clock::time_point &tp){
+template <Time::mode T, typename U> 
+inline int Time::diff(std::chrono::system_clock::time_point &tp){
 	return std::chrono::duration_cast<U>(tp - time_point_).count();
 }
 

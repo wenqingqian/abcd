@@ -8,7 +8,7 @@ find_package(Threads REQUIRED)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
 file(GLOB TESTSRC ./*.cpp)
-
+add_definitions(-DLOGTEST)
 add_executable(${PROJECT_NAME}	
 	${TESTSRC}
 )
