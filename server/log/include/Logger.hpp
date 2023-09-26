@@ -1,5 +1,5 @@
-#ifndef TSUKI_UTIL_LOGGER_HPP
-#define TSUKI_UTIL_LOGGER_HPP
+#ifndef ABCD_UTIL_LOGGER_HPP
+#define ABCD_UTIL_LOGGER_HPP
 
 #include "noncopyable.hpp"
 #include "LogStream.hpp"
@@ -14,7 +14,7 @@
 #include <source_location>
 #include <filesystem>
 
-namespace tsuki::util{
+namespace abcd::util{
 
 namespace fs = std::filesystem;
 
@@ -80,20 +80,20 @@ private:
 // 		return levelstr_;
 // 	} 
 // };
-}//namespace tsuki::util
+}//namespace abcd::util
 
-#define LOG if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::INFO )\
-	tsuki::util::Logger(tsuki::util::LogLevel::INFO).stream()
-#define LOG_DEBUG if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::DEBUG )\
-	tsuki::util::Logger(tsuki::util::LogLevel::DEBUG).stream()
-#define LOG_INFO if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::INFO )\
-	tsuki::util::Logger(tsuki::util::LogLevel::INFO).stream()
-#define LOG_WARN if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::WARN )\
-	tsuki::util::Logger(tsuki::util::LogLevel::WARN).stream()
-#define LOG_ERROR if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::ERROR )\
-	tsuki::util::Logger(tsuki::util::LogLevel::ERROR).stream()
-#define LOG_FATAL if ( tsuki::util::Logger::loglevel() <= tsuki::util::LogLevel::FATAL )\
-	tsuki::util::Logger(tsuki::util::LogLevel::FATAL).stream()
+#define LOG if ( abcd::util::Logger::loglevel() <= abcd::util::LogLevel::INFO )\
+	abcd::util::Logger(abcd::util::LogLevel::INFO).stream()
+#define LOG_DEBUG if ( abcd::util::Logger::loglevel() <= abcd::util::LogLevel::DEBUG )\
+	abcd::util::Logger(abcd::util::LogLevel::DEBUG).stream()
+#define LOG_INFO if ( abcd::util::Logger::loglevel() <= abcd::util::LogLevel::INFO )\
+	abcd::util::Logger(abcd::util::LogLevel::INFO).stream()
+#define LOG_WARN if ( abcd::util::Logger::loglevel() <= abcd::util::LogLevel::WARN )\
+	abcd::util::Logger(abcd::util::LogLevel::WARN).stream()
+#define LOG_ERROR if ( abcd::util::Logger::loglevel() <= abcd::util::LogLevel::ERROR )\
+	abcd::util::Logger(abcd::util::LogLevel::ERROR).stream()
+#define LOG_FATAL if ( abcd::util::Logger::loglevel() <= abcd::util::LogLevel::FATAL )\
+	abcd::util::Logger(abcd::util::LogLevel::FATAL).stream()
 
 
 #endif

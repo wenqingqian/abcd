@@ -1,7 +1,7 @@
 
 #include "LogStream.hpp"
 #include "TomlConfig.hpp"
-namespace tsuki::util{
+namespace abcd::util{
 const char digits[] = "9876543210123456789";
 const char* zero = digits + 9;
 
@@ -64,4 +64,4 @@ LogStream& LogStream::operator << (bool b){
 	buffer_.append((b?"true":"false"),(b?4:5));
 	return *this;
 }
-}//namespace tsuki::util
+}//namespace abcd::util

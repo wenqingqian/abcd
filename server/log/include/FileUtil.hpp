@@ -1,9 +1,12 @@
+#ifndef ABCD_UTIL_FILEUTIL_HPP
+#define ABCD_UTIL_FILEUTIL_HPP
+
 #include "noncopyable.hpp"
 #include <fstream>
 #include <string>
 #include <filesystem>
 
-namespace tsuki::util{
+namespace abcd::util{
 namespace fs = std::filesystem;
 
 class File : public noncopyable{
@@ -61,4 +64,6 @@ private:
 	// std::string typeextension_;
 };
 
-} // namespace tsuki::util
+} // namespace abcd::util
+
+#endif

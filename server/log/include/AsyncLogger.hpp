@@ -1,5 +1,5 @@
-#ifndef TSUKI_UTIL_ASYNCLOGGER_HPP
-#define TSUKI_UTIL_ASYNCLOGGER_HPP 1
+#ifndef ABCD_UTIL_ASYNCLOGGER_HPP
+#define ABCD_UTIL_ASYNCLOGGER_HPP 1
 
 #include "noncopyable.hpp"
 #include "LogStream.hpp"
@@ -11,7 +11,7 @@
 #include <memory>
 
 #include <iostream>
-namespace tsuki::util{
+namespace abcd::util{
 
 class AsyncLogger : public noncopyable{
 public:
@@ -55,6 +55,6 @@ private:
 	std::vector<bufferptr> fullqueue_;
 	std::vector<bufferptr> freequeue_;
 };
-} // namespace tsuki::util
+} // namespace abcd::util
 
 #endif

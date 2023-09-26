@@ -3,7 +3,7 @@
 #include <iostream>
 #include <thread>
 #include <vector>
-using namespace tsuki::util;
+using namespace abcd::util;
 using namespace std;
 
 void threadFunc(string name)

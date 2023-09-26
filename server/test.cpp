@@ -1,7 +1,10 @@
 // #include "include/CommonUtil.hpp"
 #include <iostream>
+#include <map>
+#include <type_traits>
+#include <utility>
 using namespace std;
-// using namespace tsuki::util;
+// using namespace abcd::util;
 
 #if defined(NDEBUG)
 #define DEBUGP(x) \
@@ -11,7 +14,18 @@ using namespace std;
 	[&](){std::cout<<x<<std::endl;}()
 #endif
 
+struct t{
+	int i;
+};
+
+template<class Tp>
+struct is_pair{
+	template <class Up, class = decltype(Up::first)> 
+	static constexpr has_member_first(){}
+	
+
+};
 int main(){
-	int i= 9;
-	DEBUGP(i<<2<<"sd");
+	
+	// DEBUGP(i<<2<<"sd");
 }

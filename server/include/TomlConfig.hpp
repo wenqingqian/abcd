@@ -19,7 +19,7 @@
 *  *define TomlConfigLog for print log information*/
 	#ifndef TomlConfigLog
 		#include <iostream>
-	namespace tsuki::util{
+	namespace abcd::util{
 		#define TomlConfigLog std::cout //<-
 		//* it need to overload operator <<
 	}
@@ -33,7 +33,7 @@
 *	a.a.a = 1_000_000
 *	raw_string = '\n\r\t'
 *   
-*	@get:
+*	@return
 *   1. auto& (config_&)      s = config::getInstance();
 *	   auto  (std::optional) p = s["sessions"][0]["a"]["a"]["a"].value<config::Int>();
 *	2. auto  (std::optional) p = CONFIG["sessions"][0]["a"]["a"]["a"].value<config::Int>();
@@ -54,8 +54,8 @@
 */
 
 
-#ifndef TSUKI_UTIL_TOMLCONFIG_HPP
-#define TSUKI_UTIL_TOMLCONFIG_HPP 1
+#ifndef ABCD_UTIL_TOMLCONFIG_HPP
+#define ABCD_UTIL_TOMLCONFIG_HPP 1
 
 /******************************************************/
 #include<variant>
@@ -73,7 +73,7 @@
 #include<any>
 #include<typeinfo>
 
-namespace tsuki::util{
+namespace abcd::util{
 
 class noncopyable_toml_config{
 	public:
@@ -116,7 +116,7 @@ public:
 	using Int 		= int32_t;
 	using String 	= string;
 	using Bool      = bool;
-	using Float     = _Float32;
+	using Float     = _Float32;//TODO
 	using Long		= int64_t;
 	using Double    = _Float64;
 	using Vector 	= vector<config_sp>;
@@ -136,8 +136,8 @@ public:
 		variant<Int,String,Bool,Float,Long,Double,Vector,Map> node;
 		public:
 		//* 修改数据类型
-		//nouse
-		template <class T>
+		//no use
+		template <class T>	//obsolete
 		void write(T&& val){
 			node = val;
 		}
@@ -153,7 +153,7 @@ public:
 				//!
 				//	BUG: 文件里是true这里会返回false, 文件里是false会返回true
 				//  在解析完往config_里塞msc(Bool())时解析没问题, 塞进Bool(true)后这里会得到false
-				//
+				//	所以这里单独取个反
 				if(auto ptr = std::get_if<Bool>(&node)){
 					return !*ptr;
 				}else{
@@ -226,9 +226,9 @@ private:
 	//*根表, 是一张map
 	config_sp root;
 
-	//默认根session
+	//*默认根session
 	string base_session_ = " ";
-	//配置文件路径
+	//*配置文件路径
 	string file_path_;
 
 private:
@@ -248,10 +248,11 @@ private:
 	};
 
 	//for std::get<con>(var)
+	//	useless but some historical code rely on 
 	constexpr static uint64_t cvtg(Config_Type ct){
 		return static_cast<uint64_t>(ct);
 	}
-	//解析状态
+	//* 解析状态
 	enum class Parse:int{
 		Value=0,	//常规值
 		Comment,	//注释
@@ -262,6 +263,7 @@ private:
 		End,		//不需要后处理
 	};
 
+	//* 解析状态机内状态
 	struct parse_info: public noncopyable_toml_config{
 		// parse_info(string b, Parse s):buffer(b),state(s){}
 		string buffer;	//缓冲区
@@ -292,7 +294,7 @@ private:
 private:
 	//*获取文件路径
 	string getFilepath() { return file_path_; }
-
+	//*解析文本数据
 	void parse(const string&);
 public:
 
@@ -689,6 +691,8 @@ inline void config::parse(const string& path){
 			
 			//初始状态
 			string line;
+
+			//*** 主循环
 			while (std::getline(inputFile, line)) { 
 
 				//*reset pinfo status
@@ -999,7 +1003,7 @@ inline void config::parse(const string& path){
 }
 
 inline config::config_ config::default_ = config::config_();
-}//namespace tsuki::util
+}//namespace abcd::util
 
-#define CONFIG tsuki::util::config::getInstance()
+#define CONFIG abcd::util::config::getInstance()
 #endif

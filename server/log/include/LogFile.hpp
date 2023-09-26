@@ -1,5 +1,5 @@
-#ifndef TSUKI_UTIL_LOGFILE_HPP
-#define TSUKI_UTIL_LOGFILE_HPP
+#ifndef ABCD_UTIL_LOGFILE_HPP
+#define ABCD_UTIL_LOGFILE_HPP
 #include <string>
 #include <fstream>
 #include <filesystem>
@@ -8,7 +8,7 @@
 #include "noncopyable.hpp"
 #include "Time.hpp"
 #include "FileUtil.hpp"
-namespace tsuki::util{
+namespace abcd::util{
 
 namespace fs = std::filesystem;
 
@@ -57,6 +57,6 @@ private:
 };
 
 
-} // namespace tsuki::util
+} // namespace abcd::util
 
 #endif

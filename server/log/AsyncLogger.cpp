@@ -1,6 +1,6 @@
 #include "AsyncLogger.hpp"
 #include "Logger.hpp"
-namespace tsuki::util{
+namespace abcd::util{
 
 AsyncLogger::AsyncLogger()
 	: 	mu_(),
@@ -115,4 +115,4 @@ void AsyncLogger::asyncLogFunc(){
 	file_.flush();
 }
 
-} // namespace tsuki::util
+} // namespace abcd::util

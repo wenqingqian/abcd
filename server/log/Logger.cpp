@@ -4,7 +4,7 @@
 #include "AsyncLogger.hpp"
 #include "CommonUtil.hpp"
 #include <iostream>
-namespace tsuki::util{
+namespace abcd::util{
 
 static pthread_once_t once_control_ = PTHREAD_ONCE_INIT;
 static AsyncLogger *AsyncLogger_;
@@ -122,5 +122,5 @@ switch (level){
 // 	else level_ = DEFAULT;
 // }
 
-}//namespace tsuki::util
+}//namespace abcd::util
 

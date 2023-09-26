@@ -1,5 +1,5 @@
-#ifndef TSUKI_UTIL_LOGSTREAM_HPP
-#define TSUKI_UTIL_LOGSTREAM_HPP
+#ifndef ABCD_UTIL_LOGSTREAM_HPP
+#define ABCD_UTIL_LOGSTREAM_HPP
 
 
 #include "noncopyable.hpp"
@@ -9,7 +9,7 @@
 #include <cstring>
 #include <string>
 
-namespace tsuki::util{
+namespace abcd::util{
 using std::string;
 constexpr static size_t buffer_size_large = 4000*1000;//4MB
 constexpr static size_t buffer_size_small = 4000;//4KB
@@ -79,6 +79,6 @@ public:
 	LogStream& operator << (bool);
 };
 
-}//namespace tsuki::util
+}//namespace abcd::util
 
 #endif

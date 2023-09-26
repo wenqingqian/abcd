@@ -1,12 +1,12 @@
-#ifndef TSUKI_UTIL_TIME_HPP
-#define TSUKI_UTIL_TIME_HPP
+#ifndef ABCD_UTIL_TIME_HPP
+#define ABCD_UTIL_TIME_HPP
 
 #include <chrono>
 #include <cstdio>
 #include <string>
 #include <sstream>
 #include <type_traits>
-namespace tsuki::util
+namespace abcd::util
 {
 
 
@@ -213,6 +213,6 @@ inline int Time::diff(std::chrono::system_clock::time_point &tp){
 	return std::chrono::duration_cast<U>(tp - time_point_).count();
 }
 
-} // namespace tsuki::util
+} // namespace abcd::util
 
 #endif

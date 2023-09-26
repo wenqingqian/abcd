@@ -1,5 +1,5 @@
-#ifndef TSUKI_NONCOPTABLE_HPP
-#define TSUKI_NONCOPTABLE_HPP
+#ifndef ABCD_NONCOPTABLE_HPP
+#define ABCD_NONCOPTABLE_HPP
 
 class noncopyable{
 public:

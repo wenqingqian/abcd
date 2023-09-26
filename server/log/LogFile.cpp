@@ -3,7 +3,7 @@
 #include <assert.h>
 #include <sstream>
 #include <chrono>
-namespace tsuki::util{
+namespace abcd::util{
 
 LogFile::LogFile()
 	:	time_(),
@@ -150,4 +150,4 @@ void LogFile::refreshHistory(){
     // 关闭文件
     file.close();
 }
-} // namespace tsuki::util
+} // namespace abcd::util

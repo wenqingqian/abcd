@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <sys/syscall.h>
 
-namespace tsuki::util::currentThread{
+namespace abcd::util::currentThread{
 thread_local pthread_t t_id_cache_ = 0;
 thread_local std::string t_name_cache_ = "default";
 thread_local std::string t_id_string_cache_ = "(null)";

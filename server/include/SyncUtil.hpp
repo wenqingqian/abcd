@@ -1,8 +1,9 @@
-#ifndef TSUKI_UTIL_SYNCUTIL_HPP
-#define TSUKI_UTIL_SYNCUTIL_HPP
+#ifndef ABCD_UTIL_SYNCUTIL_HPP
+#define ABCD_UTIL_SYNCUTIL_HPP
 
 /**
 	synchronize utility
+	//2023-9-26 基本没用以后再说, 似乎就一个binaryspinlatch 给日志的
 	@author wenqingqian
 */
 #include "noncopyable.hpp"
@@ -15,7 +16,7 @@
 // #include <latch>
 #include <assert.h>
 
-namespace tsuki::util{
+namespace abcd::util{
 
 //spin countdownlatch
 class SpinLatch: public noncopyable{
@@ -107,6 +108,6 @@ private:
 	std::condition_variable cond_;
 	std::atomic_flag flag_;
 };
-}//namespace tsuki::util
+}//namespace abcd::util
 
 #endif
