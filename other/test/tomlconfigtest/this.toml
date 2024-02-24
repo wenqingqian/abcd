@@ -1,0 +1,47 @@
+a. a .c=1
+a .b= "s\\\n\"[]#d"#a"
+a.c = [1,"2"]
+
+f = [1,"a"]
+
+r="z"
+[test_1]
+r = "s\\\n\"[]#d"#a
+s = 'sd\"s'
+#inin
+
+[test_2]
+r = "."
+s = "1.2 3"
+
+[[test_3]]
+r = 1
+f = "sd"
+[[test_3]]
+r =10
+s= 1
+
+
+[[test_4]]
+r = [1 ,   4]
+s =[ 1,2, "[],,1\\\"\n#1",'\n'] 
+
+
+
+[[test_5]]
+
+a.c = 3
+a.d = [1,"2","3"]
+[[test_5]]
+a. e .a=1
+
+[test_6]
+
+a = true
+b.a = false
+c = "true"
+b.b = false
+b.c = [true,"true",false,"false"]
+b.d = [1,true,]
+#TODO 行内表
+#     Float

@@ -5,18 +5,14 @@ project(tinymuduo)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED on)
 
+# add_definitions(-DNDEBUG)
+# add_definitions(-Wall)
+
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(./include)
-include_directories(./log/include)
+include_directories(./include/log)
+include_directories(./include/thread)
+include_directories(./include/util)
 
-aux_source_directory(. MAINSRC)
-list(REMOVE_ITEM MAINSRC ./test.cpp)
-message(${PROJECT_NAME} " executable include " ${MAINSRC})
-add_executable(${PROJECT_NAME} ${MAINSRC})
-
-find_package(Threads REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
-
-add_subdirectory(./log)
-target_link_libraries(${PROJECT_NAME} PRIVATE ASYNCLOG)
+add_subdirectory(./src)

@@ -1,0 +1,25 @@
+[log]
+# 忽略level以下不包括level的日志
+level = "DEBUG"
+
+flush_val = 3
+buffer_vector_size = 8
+buffer_vector_free_size = 4
+buffer_to_write_max = 16
+
+output_path = "log/abcd.log"
+
+# 单个日志最大大小(B)
+roll_size = 20_000
+
+# 总日志量
+log_store_limit = 40_000
+
+# 多长时间归档一次
+time_check_interval = 4800 # second
+
+# 历史log归档信息(自动)
+logHistoryRecordPath = "log/logHistoryRecord.txt"
+
+[server]
+port = 8002
