@@ -1,0 +1,4 @@
+class		helloWorld
+func		helloWorld
+var			hello_world
+class_var	hello_world_

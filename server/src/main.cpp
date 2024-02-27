@@ -1,11 +1,7 @@
-#include "logger.hpp"
 #include "common.hpp"
-#include <getopt.h>
+#include "server.hpp"
 #include <iostream>
 #include "TomlConfig.hpp"
-#include "config.hpp"
-#include <vector>
-#include <thread>
 
 using namespace abcd;
 using namespace std;
@@ -22,16 +18,6 @@ __attribute__((destructor)) void end_(){
 
 int main(int argc, char* argv[]){
 
-	output(conf.log.level);
-	output(conf.server.port);
-	LOG_TEST << "test";
-	
-	mtime time;
-	int x;
-	for(int i=0;i<100000000;i++){
-		x++;
-	}
-	mtime no;
-	std::cout<<no.diff<mtime::millisecond>(time);
-
+	server mserver;
+	mserver.start();
 }
