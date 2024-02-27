@@ -23,3 +23,5 @@ logHistoryRecordPath = "log/logHistoryRecord.txt"
 
 [server]
 port = 8002
+
+maxfd = 100000

@@ -35,6 +35,8 @@ void config::init(const char* path){
 	CONFIG_INT(CONFIG["log"]["time_check_interval"], log.time_check_interval)
 
 	CONFIG_INT(CONFIG["log"]["log_store_limit"], log.log_store_limit)
+
+	CONFIG_INT(CONFIG["server"]["maxfd"], server.maxfd)
 	
 	CONFIG.release();
 

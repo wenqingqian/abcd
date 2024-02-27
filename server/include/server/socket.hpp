@@ -22,4 +22,7 @@ namespace abcd{
 void addsig(int, void(*)(int));
 int socketBindListen(int);
 
+ssize_t readn(int fd, void *buff, size_t n);
+ssize_t writen(int fd, void *buff, size_t n); 
+
 }

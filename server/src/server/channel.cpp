@@ -3,9 +3,8 @@
 #include "common.hpp"
 namespace abcd{
 
-channel::channel(eventloop* loop, int fd)
-	:	loop_(loop),
-		fd_(fd),
+channel::channel(int fd)
+	:	fd_(fd),
 		events_(0),
 		revents_(0)
 	{}
@@ -14,19 +13,19 @@ void channel::handleEvent()
 {
 	if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN))
 	{
-		if (closeCallback_) closeCallback_();
+		if (close_callback_) close_callback_();
 	}
 	if (revents_ & (EPOLLERR))
 	{
-		if (errorCallback_) errorCallback_();
+		if (error_callback_) error_callback_();
 	}
 	if (revents_ & (EPOLLIN | EPOLLPRI | EPOLLRDHUP))
 	{
-		if (readCallback_) readCallback_();
+		if (read_callback_) read_callback_();
 	}
 	if (revents_ & EPOLLOUT)
 	{
-		if (writeCallback_) writeCallback_();
+		if (write_callback_) write_callback_();
 	}
 
 }
