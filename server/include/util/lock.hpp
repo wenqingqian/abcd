@@ -6,7 +6,7 @@
 #include <chrono>
 #include <pthread.h>
 // #include <barrier>
-// #include <latch>
+#include <latch>
 #include <assert.h>
 
 namespace abcd{
@@ -29,6 +29,7 @@ private:
 	std::atomic<bool> flag_;
 	std::atomic<int> count_;
 };
+// using latch = std::latch;
 
 //BinaryLatch AsyncNotify n notify to 1 wait
 //spin for seconds

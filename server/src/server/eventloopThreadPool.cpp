@@ -1,18 +1,15 @@
-#include "eventloopThreadPool.h"
-
-namespace abcd{
-
+// @Author Lin Ya
+// @Email xxbbb@vip.qq.com
+#include "eventloopThreadPool.hpp"
 // 这个类的目的是创建一个包含多个线程的线程池，每个线程都有一个独立的 eventloop 对象。
 // 在构造函数中，指定了基础 eventloop（即主线程的 eventloop）和线程数。
 // 在 start 函数中，启动了指定数量的线程，每个线程都有一个独立的 eventloop 对象。
 // 在 getNextLoop 函数中，根据轮询策略获取下一个要使用的 eventloop。
+namespace abcd{
 
 // 构造函数
 eventloopThreadPool::eventloopThreadPool(eventloop *baseLoop, int numThreads)
-	:	baseLoop_(baseLoop), 
-		started_(false), 
-		numThreads_(numThreads), 
-		next_(0) 
+	:	baseLoop_(baseLoop), started_(false), numThreads_(numThreads), next_(0) 
 	{
 	if (numThreads_ <= 0) {
 		LOG << "numThreads_ <= 0";
@@ -42,4 +39,5 @@ eventloop *eventloopThreadPool::getNextLoop() {
 	}
 	return loop;
 }
-}
+
+}// namespace

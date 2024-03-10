@@ -55,7 +55,6 @@ private:
 	static logLevel logignore_;	
 };
 
-
 #define LOG if ( logger::loglevel() <= logLevel::INFO )\
 	logger(logLevel::INFO).stream()
 #define LOG_DEBUG if ( logger::loglevel() <= logLevel::DEBUG )\
@@ -69,4 +68,5 @@ private:
 #define LOG_FATAL if ( logger::loglevel() <= logLevel::FATAL )\
 	logger(logLevel::FATAL).stream()
 #define LOG_TEST logger(logLevel::FATAL).stream()
-}
+
+} // namespace

@@ -5,7 +5,7 @@ namespace abcd{
 
 asyncLogger::asyncLogger()
 	: 	mu_(),
-		latch_(),
+		latch_(1),
 		running_(true),
 		cond_()
 	{

@@ -1,6 +1,6 @@
 [log]
 # 忽略level以下不包括level的日志
-level = "DEBUG"
+level = "DEFAULT"
 
 flush_val = 3
 buffer_vector_size = 8
@@ -23,5 +23,5 @@ logHistoryRecordPath = "log/logHistoryRecord.txt"
 
 [server]
 port = 8002
-
+thread_num = 4
 maxfd = 100000

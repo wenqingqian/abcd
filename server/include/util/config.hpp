@@ -14,6 +14,7 @@ public:
 	struct{
 		//         type, name, default_value
 		CONFIG_SET_NUM(int, port, 8002)
+		CONFIG_SET_NUM(int, thread_num, 4)
 		CONFIG_SET_NUM(int, maxfd, 100000)
 	}server;
 

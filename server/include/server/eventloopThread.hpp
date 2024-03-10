@@ -1,25 +1,24 @@
+// @Author Lin Ya
+// @Email xxbbb@vip.qq.com
 #pragma once
-#include "eventloop.h"
-#include "common.hpp"
+#include "eventloop.hpp"
 #include "lock.hpp"
-
+#include "thread.hpp"
 namespace abcd{
 
-class eventloopThread : public noncopyable {
+class eventloopThread : noncopyable {
 public:
 	eventloopThread();
 	~eventloopThread();
-
 	eventloop* startLoop();
 
 private:
 	void threadFunc();
-	
 	eventloop* loop_;
 	bool exiting_;
-	std::thread thread_; // 可能需要自定义一个thread类型处理(用pthread)
+	thread thread_;
 	std::mutex mutex_;
 	condition cond_;
 };
 
-}
+}// namespace

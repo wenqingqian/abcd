@@ -1,5 +1,4 @@
 #include "currentThread.hpp"
-
 #include <unistd.h>
 #include <sys/syscall.h>
 
@@ -15,7 +14,7 @@ pthread_t this_thread_init_once(){
 	return t_id_cache_;
 }
 void cacheid(){
-	t_id_cache_ = pthread_self();
+	t_id_cache_ = gettid();
 	t_id_string_cache_ = std::to_string(t_id_cache_);
 	if (t_id_string_cache_.length() > 6) {
     	t_id_string_cache_ = t_id_string_cache_.substr(t_id_string_cache_.length() - 6);

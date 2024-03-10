@@ -75,6 +75,8 @@ public:
 	logStream& operator << (string&&);
 	logStream& operator << (string&);
 	logStream& operator << (bool);
+
+	const char* release(){ return buffer_.data(); }
 };
 
 }//namespace abcd

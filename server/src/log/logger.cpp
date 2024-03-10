@@ -69,7 +69,11 @@ logger::~logger(){
 	stream_.append(" ",1);
 	stream_ << fs::relative(sl_.file_name(),workpath_) << ":" << sl_.line() << '\n';
 	pthread_once(&once_control_, once_init);
+#if defined(LOG_PUSH_TO_TERMINAL)
+	std::cout<< stream_.release() <<std::endl;
+#else
 	asyncLogger_->append(stream_); 
+#endif
 }
 
 void stopAsyncLogger(){

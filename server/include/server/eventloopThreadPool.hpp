@@ -1,17 +1,19 @@
+// @Author Lin Ya
+// @Email xxbbb@vip.qq.com
 #pragma once
 #include <memory>
 #include <vector>
-#include "eventloop.hpp"
-#include "eventloopThread.h"
-
+#include "eventloopThread.hpp"
+#include "common.hpp"
 namespace abcd{
 
-class eventloopThreadPool : public noncopyable {
+class eventloopThreadPool : noncopyable {
 public:
 	eventloopThreadPool(eventloop* baseLoop, int numThreads);
 
 	~eventloopThreadPool() { LOG << "~eventloopThreadPool()"; }
 	void start();
+
 	eventloop* getNextLoop();
 
 private:
@@ -23,4 +25,4 @@ private:
 	std::vector<eventloop*> loops_;
 };
 
-}
+}// namespace

@@ -15,6 +15,8 @@ void config::init(const char* path){
 	printf("server config path: %s\n", path);
 
 	CONFIG_INT(CONFIG["server"]["port"], server.port)
+	
+	CONFIG_INT(CONFIG["server"]["thread_num"], server.thread_num)
 
 	CONFIG_INT(CONFIG["log"]["flush_val"], log.flush_val)
 

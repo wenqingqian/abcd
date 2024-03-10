@@ -4,10 +4,10 @@
 namespace abcd{
 	#if defined(NDEBUG)
 	#define output(x) \
-		[](){}()
+		[](){}();
 	#else
 	#define output(x) \
-		[&](){std::cout<<cut(__FILE__)<<" "<<__LINE__<<":"<< x <<std::endl;}()
+		[&](){std::cout<<cut(__FILE__)<<" "<<__LINE__<<":"<< x <<std::endl;}();
 	#endif
 
 	#define panic(x) \

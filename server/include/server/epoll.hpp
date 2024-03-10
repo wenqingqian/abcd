@@ -1,25 +1,33 @@
+// @Author Lin Ya
+// @Email xxbbb@vip.qq.com
 #pragma once
+#include <sys/epoll.h>
+#include <memory>
+#include <unordered_map>
+#include <vector>
 #include "channel.hpp"
-#include "socket.hpp"
+#include "httpData.hpp"
 namespace abcd{
 
-class epoll{
+class epoll {
 public:
 	epoll();
 	~epoll(){}
-	void add(channelSp);
-	void mod(channelSp);
-	void del(channelSp);
-	channelSpList poll();
-	int getEpollFd() { return epollfd_; }
+	
+	void add(channelSp request);
+	void mod(channelSp request);
+	void del(channelSp request);
+
+	channelSpVec poll();
+
+	int getepollFd() { return epollFd_; }
 
 private:
-	int maxfd_;
-	int epollfd_;
+	static const int MAXFDS = 100000;
+	int epollFd_;
 	std::vector<epoll_event> events_;
-	channelSpMap channels_;
+	channelSp fd2chan_[MAXFDS];
+
 };
 
-using epollSp = std::shared_ptr<epoll>;
-using epollUp = std::unique_ptr<epoll>;
-}
+}// namespace

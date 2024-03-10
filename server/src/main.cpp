@@ -4,7 +4,6 @@
 #include "TomlConfig.hpp"
 
 using namespace abcd;
-using namespace std;
 
 __attribute__((constructor)) void start_(){ 
 	// setenv("TZ", "America/New_York", 1);
@@ -18,6 +17,12 @@ __attribute__((destructor)) void end_(){
 
 int main(int argc, char* argv[]){
 
-	server mserver;
-	mserver.start();
+	currentThread::this_thread_init_once();
+	
+	LOG_INFO << "muduo start";
+	eventloop mainloop;
+	server httpserver(&mainloop);
+	httpserver.start();
+	mainloop.loop();
+
 }
